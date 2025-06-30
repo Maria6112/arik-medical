@@ -1,0 +1,77 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-img {
+  height: 80px; /* ты можешь уменьшить до 40px, если нужно */
+  object-fit: contain;
+}
+
+/* Центр — ссылки */
+.navbar-center {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-center a {
+  color: #006699;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.navbar-center a:hover {
+  color: #009966;
+  text-decoration: underline;
+}
+
+/* Бургер */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #006699;
+  margin: 5px 0;
+  transition: 0.3s ease;
+}
+
+/* Mobile адаптация */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-center {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar-center.active {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .navbar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

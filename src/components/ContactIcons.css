@@ -1,0 +1,68 @@
+/* Основная обёртка */
+.contact-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.messenger-icons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.icon-btn {
+  padding: 6px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+/* Navbar: цветной фон, белая иконка */
+.icon-btn.whatsapp.navbar {
+  background-color: #25d366;
+  color: white;
+}
+
+.icon-btn.telegram.navbar {
+  background-color: #0088cc;
+  color: white;
+}
+
+.icon-btn.viber.navbar {
+  background-color: #7360f2;
+  color: white;
+}
+
+.icon-btn.navbar:hover {
+  opacity: 0.8;
+}
+
+/* Footer: белый фон, цветная иконка */
+.icon-btn.footer {
+  background-color: white;
+}
+
+.icon-btn.whatsapp.footer {
+  color: #25d366;
+}
+
+.icon-btn.telegram.footer {
+  color: #0088cc;
+}
+
+.icon-btn.viber.footer {
+  color: #7360f2;
+}
+
+.icon-btn.footer:hover {
+  background-color: #f0f0f0;
+}
+
+.phone-number {
+  font-size: 16px;
+  text-decoration: underline;
+}

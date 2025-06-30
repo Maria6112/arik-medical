@@ -1,0 +1,43 @@
+.consultation-widget {
+  padding: 20px;
+  max-width: 400px;
+  background: #f4fefc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 102, 153, 0.1);
+  font-family: sans-serif;
+  margin: 20px auto;
+}
+
+.consultation-widget h3 {
+  margin-bottom: 15px;
+  color: #006699;
+}
+
+.consultation-widget form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.consultation-widget input,
+.consultation-widget textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.consultation-widget button {
+  padding: 10px;
+  background-color: #009966;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.consultation-widget button:hover {
+  background-color: #007a55;
+}
