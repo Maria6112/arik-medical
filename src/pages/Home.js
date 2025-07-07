@@ -8,7 +8,7 @@ const Home = () => {
     <div className="background-section">
       <div className="home-wrapper">
         <div className="home-main-content">
-          <section className="welcome">
+          <section className="welcome" data-aos="fade-up">
             <h1>Добро пожаловать!</h1>
             <p>
               Мы помогаем организовать лечение в Израиле для русскоязычных
@@ -16,7 +16,7 @@ const Home = () => {
             </p>
           </section>
 
-          <section className="intro">
+          <section className="intro" data-aos="fade-up" data-aos-delay="100">
             <h1>Клиника Ассута (Израиль)</h1>
             <p>
               Ассута — один из ведущих медицинских центров Израиля, сочетающий
@@ -25,7 +25,7 @@ const Home = () => {
               10 филиалов по всей стране.
             </p>
           </section>
-          <section className="about">
+          <section className="about" data-aos="fade-up" data-aos-delay="200">
             <h2>Почему выбирают Ассуту</h2>
             <ul>
               <li>Современное оборудование и точная диагностика</li>
@@ -37,55 +37,59 @@ const Home = () => {
           </section>
         </div>
 
-        <div className="home-sidebar">
+        <div className="home-sidebar" data-aos="fade-left" data-aos-delay="400">
           <div className="form-wrapper">
             <ConsultationForm />
           </div>
         </div>
       </div>
 
-      <section className="specializations">
+      <section
+        className="specializations"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
         <h2>Основные направления лечения</h2>
         <div className="specialties-grid">
-          <div>
+          <div data-aos="zoom-in" data-aos-delay="100">
             <h3>Хирургия</h3>
             <p>Общая, пластическая, бариатрическая, малоинвазивная</p>
           </div>
-          <div>
+          <div data-aos="zoom-in" data-aos-delay="200">
             <h3>Нейрохирургия</h3>
             <p>Щадящие методы лечения позвоночника, вертебропластика</p>
           </div>
-          <div>
+          <div data-aos="zoom-in" data-aos-delay="300">
             <h3>Кардиология</h3>
             <p>Гибридные операционные, стентирование, шунтирование</p>
           </div>
-          <div>
+          <div data-aos="zoom-in" data-aos-delay="400">
             <h3>Онкология</h3>
             <p>Иммунотерапия, фотодинамика, новейшие протоколы</p>
           </div>
-          <div>
+          <div data-aos="zoom-in" data-aos-delay="500">
             <h3>Ортопедия</h3>
             <p>Замена суставов, лечение остеохондроза, грыж</p>
           </div>
-          <div>
+          <div data-aos="zoom-in" data-aos-delay="600">
             <h3>Гастроэнтерология</h3>
             <p>Заболевания печени и поджелудочной</p>
           </div>
-          <div>
+          <div data-aos="zoom-in" data-aos-delay="700">
             <h3>Неврология</h3>
             <p>Эпилепсия, рассеянный склероз и другое</p>
           </div>
-          <div>
+          <div data-aos="zoom-in" data-aos-delay="800">
             <h3>Нефрология</h3>
             <p>Малоинвазивное лечение почек и камней</p>
           </div>
-          <div>
+          <div data-aos="zoom-in" data-aos-delay="900">
             <h3>Гинекология и ЭКО</h3>
             <p>Более 7,000 процедур в год — 25% ЭКО по Израилю</p>
           </div>
         </div>
       </section>
-      <section className="assistance">
+      <section className="assistance" data-aos="fade-up" data-aos-delay="400">
         <h2>Сопровождение пациентов</h2>
         <p>
           Мы помогаем с переводами, записью на лечение и полным сопровождением
@@ -93,20 +97,25 @@ const Home = () => {
           всё пройдёт комфортно и организованно.
         </p>
       </section>
-      <section className="process-section">
+      <section
+        className="process-section"
+        data-aos="fade-up"
+        data-aos-delay="500"
+      >
         <h2>Как принимает пациентов клиника Ассута?</h2>
         <div className="process-grid">
-          <div className="process-step">
+          <div className="process-step" data-aos="flip-left">
             <div className="icon-box">
               <FaPlane />
             </div>
             <h3>Запись и приезд</h3>
-            <p>
-              Помощь в покупке авиабилетов по выгодным тарифам и бронирование
-              жилья — отель или апартаменты.
-            </p>
+            <p>Помощь и бронирование жилья — отель или апартаменты.</p>
           </div>
-          <div className="process-step">
+          <div
+            className="process-step"
+            data-aos="flip-left"
+            data-aos-delay="100"
+          >
             <div className="icon-box">
               <FaCar />
             </div>

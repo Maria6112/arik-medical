@@ -2,7 +2,7 @@
 .contact-icons {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  /* align-items: flex-end; */
   gap: 5px;
 }
 
@@ -36,6 +36,14 @@
   background-color: #7360f2;
   color: white;
 }
+.icon-btn.email-icon.navbar {
+  background-color: #0088cc;
+  color: white;
+}
+.icon-btn.phone-icon.navbar {
+  background-color: #0088cc;
+  color: white;
+}
 
 .icon-btn.navbar:hover {
   opacity: 0.8;
@@ -44,6 +52,11 @@
 /* Footer: белый фон, цветная иконка */
 .icon-btn.footer {
   background-color: white;
+  color: inherit;
+}
+
+.messenger-buttons.footer {
+  align-items: flex-start; /* вместо flex-end */
 }
 
 .icon-btn.whatsapp.footer {
@@ -65,4 +78,14 @@
 .phone-number {
   font-size: 16px;
   text-decoration: underline;
+}
+
+h5 {
+  text-align: center;
+}
+.contact-us {
+  display: flex;
+  gap: 10px;
+  /* margin-bottom: 5px; */
+  margin: 10px;
 }

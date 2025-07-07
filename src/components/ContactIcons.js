@@ -1,13 +1,17 @@
 import React from "react";
-import {
-  FaWhatsapp,
-  FaTelegramPlane,
-  FaViber,
-  FaEnvelope,
-} from "react-icons/fa";
+import { FaWhatsapp, FaTelegramPlane, FaViber } from "react-icons/fa";
 import "./ContactIcons.css";
+import NotifyMake from "./NotifyMake";
 
 const ContactIcons = ({ variant = "navbar" }) => {
+  const handleClick = async (serviceName) => {
+    await NotifyMake({
+      name: `Клик на ${serviceName}`,
+      phone: "—",
+      message: `Пользователь кликнул по иконке ${serviceName}`,
+    });
+  };
+
   return (
     <div className={`contact-icons ${variant}`}>
       <div className="messenger-buttons">
@@ -17,6 +21,7 @@ const ContactIcons = ({ variant = "navbar" }) => {
             target="_blank"
             rel="noopener noreferrer"
             className={`icon-btn whatsapp ${variant}`}
+            onClick={() => handleClick("WhatsApp")}
           >
             <FaWhatsapp size={22} />
           </a>
@@ -25,6 +30,7 @@ const ContactIcons = ({ variant = "navbar" }) => {
             target="_blank"
             rel="noopener noreferrer"
             className={`icon-btn telegram ${variant}`}
+            onClick={() => handleClick("Telegram")}
           >
             <FaTelegramPlane size={22} />
           </a>
@@ -33,6 +39,7 @@ const ContactIcons = ({ variant = "navbar" }) => {
             target="_blank"
             rel="noopener noreferrer"
             className={`icon-btn viber ${variant}`}
+            onClick={() => handleClick("Viber")}
           >
             <FaViber size={22} />
           </a>

@@ -3,20 +3,20 @@ import emailjs from "@emailjs/browser";
 import "./ConsultationForm.css";
 import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
+import NotifyMake from "./NotifyMake";
+import collectUserMeta from "../utils/collectUserMeta";
 
 const ConsultationForm = () => {
   const form = useRef();
   const [phone, setPhone] = useState("");
-
   const [statusMessage, setStatusMessage] = useState("");
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
 
-    // if (!phone) {
-    //   setStatusMessage("Пожалуйста, введите номер телефона.");
-    //   return;
-    // }
+    const formEl = form.current;
+    const name = formEl.user_name.value;
+    const message = formEl.message.value;
 
     if (phone.length < 10) {
       setStatusMessage(
@@ -25,27 +25,40 @@ const ConsultationForm = () => {
       return;
     }
 
-    emailjs
-      .sendForm(
-        "service_0bq0qff", // Скопируй из EmailJS
-        "template_5d9cmq4", // Скопируй из шаблона EmailJS
+    try {
+      // Получаем метаданные пользователя
+      const meta = await collectUserMeta();
+
+      // Записываем в скрытые input'ы
+      formEl.user_ip.value = meta.ip;
+      formEl.user_city.value = `${meta.city}, ${meta.country}`;
+      formEl.user_time.value = meta.dateTime;
+      formEl.user_browser.value = meta.userAgent;
+
+      const result = await emailjs.sendForm(
+        "service_0bq0qff",
+        "template_5d9cmq4",
         form.current,
-        "Scuu1QvAY13jEqBtb" // Скопируй из аккаунта EmailJS
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          setStatusMessage(
-            "Сообщение успешно отправлено! Скоро наш консультает с вами свяжется"
-          );
-          form.current.reset();
-          setPhone("");
-        },
-        (error) => {
-          console.error(error.text);
-          setStatusMessage("Ошибка при отправке формы. Попробуйте еще раз.");
-        }
+        "Scuu1QvAY13jEqBtb"
       );
+
+      console.log(result.text);
+      setStatusMessage(
+        "Сообщение успешно отправлено! Скоро наш консультает с вами свяжется"
+      );
+
+      await NotifyMake({
+        name: name,
+        phone: phone,
+        message: message,
+      });
+
+      form.current.reset();
+      setPhone("");
+    } catch (error) {
+      console.error(error.text || error);
+      setStatusMessage("Ошибка при отправке формы. Попробуйте еще раз.");
+    }
   };
 
   return (
@@ -67,7 +80,10 @@ const ConsultationForm = () => {
           inputStyle={{ width: "100%" }}
         />
         <textarea name="message" placeholder="Ваше сообщение" required />
-        {/* <input type="file" name="file" /> */}
+        <input type="hidden" name="user_ip" />
+        <input type="hidden" name="user_city" />
+        <input type="hidden" name="user_time" />
+        <input type="hidden" name="user_browser" />
         <button type="submit">Отправить</button>
         {/* Сообщение о статусе */}
         {statusMessage && (

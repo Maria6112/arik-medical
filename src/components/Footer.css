@@ -56,6 +56,7 @@
   font-size: 15px;
   color: #006699;
   text-decoration: none;
+  margin-bottom: 15px; /* вот этот отступ */
 }
 
 .email-link:hover {

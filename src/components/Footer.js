@@ -24,7 +24,7 @@ const Footer = () => {
 
         <div className="footer-column">
           <h4>Контакты</h4>
-          <a href="mailto:mariastefanian@gmail.com" className="email-link">
+          <a href="mailto:ariktours@mail.ru" className="email-link">
             <FaEnvelope className="email-icon" /> ariktours@mail.ru
           </a>
           <ContactIcons variant="footer" />

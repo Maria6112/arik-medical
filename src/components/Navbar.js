@@ -12,7 +12,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo navbar-left">
-        <img src={logo} alt="Арик Медикал" className="logo-img" />
+        <Link to="/">
+          <img src={logo} alt="Арик Медикал" className="logo-img" />
+        </Link>
       </div>
 
       <div className={`navbar-center navbar-links ${menuOpen ? "active" : ""}`}>
@@ -29,14 +31,28 @@ const Navbar = () => {
       {/* Контакты справа */}
       <div className="navbar-right">
         <ContactIcons variant="navbar" />
+        <div
+          className={`burger ${menuOpen ? "open" : ""}`}
+          onClick={toggleMenu}
+        >
+          {/* <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div> */}
+          <span className="bar top"></span>
+          <span className="bar middle"></span>
+          <span className="bar bottom"></span>
+        </div>
       </div>
-      <div
-        className={`burger ${menuOpen ? "rotate" : ""}`}
-        onClick={toggleMenu}
-      >
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
+      <div className={`mobile-menu ${menuOpen ? "show" : ""}`}>
+        <Link to="/" onClick={() => setMenuOpen(false)}>
+          Главная
+        </Link>
+        <Link to="/about" onClick={() => setMenuOpen(false)}>
+          О нас
+        </Link>
+        <Link to="/contact" onClick={() => setMenuOpen(false)}>
+          Контакты
+        </Link>
       </div>
     </nav>
   );
