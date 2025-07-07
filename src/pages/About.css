@@ -1,0 +1,65 @@
+.about-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* Заголовки секций */
+.about-page h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #006699;
+  border-left: 5px solid #009966;
+  padding-left: 12px;
+}
+
+/* Общий стиль текста */
+.about-page p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+/* Список преимуществ */
+.about-advantages ul {
+  padding-left: 20px;
+  list-style-type: disc;
+  margin-bottom: 30px;
+}
+
+.about-advantages li {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+/* Разделы */
+.about-page section {
+  background-color: #fff;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Мобильная адаптация --- */
+@media (max-width: 768px) {
+  .about-page {
+    padding: 20px 15px;
+  }
+
+  .about-page h2 {
+    font-size: 22px;
+  }
+
+  .about-page p,
+  .about-advantages li {
+    font-size: 16px;
+  }
+
+  .about-page section {
+    padding: 20px;
+  }
+}

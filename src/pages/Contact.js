@@ -20,10 +20,10 @@ const Contact = () => {
 
   return (
     <div>
-      <section>
+      <div className="contact-header">
         <h1>Связаться с нами</h1>
-        <p>Выберете удобный для вас способ связи:</p>
-      </section>
+        <p>Выберите удобный для вас способ связи:</p>
+      </div>
       <div className="contact-us">
         <div>
           <a
@@ -87,11 +87,17 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="contact-us">
-        <p>Номер телефона: +972-543421852</p>
-      </div>
-      <div className="contact-us">
-        <p>Рабочии часы: Вc - Пт с 09:00 до 20:00</p>
+      <div className="contact-info-block">
+        <div>
+          <p>
+            <strong>Номер телефона: </strong> +972-54-3421852
+          </p>
+        </div>
+        <div>
+          <p>
+            <strong>Рабочие часы: </strong>Вc - Пт с 09:00 до 20:00
+          </p>
+        </div>
       </div>
     </div>
   );

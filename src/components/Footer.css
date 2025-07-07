@@ -49,6 +49,9 @@
   font-size: 14px;
   color: #e0e0e0;
 }
+.footer-bottom p {
+  color: white;
+}
 .email-link {
   display: flex;
   align-items: center;
