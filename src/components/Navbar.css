@@ -17,7 +17,7 @@
   object-fit: contain;
 }
 .navbar-logo {
-  max-width: 60%;
+  max-width: 50%;
   overflow: hidden;
 }
 
@@ -25,9 +25,8 @@
 .navbar-right {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 10px;
-  margin-left: auto; /* Сдвигает всё вправо */
-  flex-shrink: 0; /* Не позволяет сжиматься */
 }
 
 /* === БУРГЕР === */
@@ -64,6 +63,7 @@
 .navbar-center {
   display: flex;
   gap: 20px;
+  justify-content: center;
 }
 
 .navbar-center a {
@@ -118,14 +118,14 @@
   }
 }
 @media (max-width: 480px) {
-  .icon-btn {
+  /* .icon-btn {
     padding: 4px;
   }
 
   .icon-btn svg {
     width: 26px;
     height: 26px;
-  }
+  } */
 
   .logo-img {
     height: 48px;
