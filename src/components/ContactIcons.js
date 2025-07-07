@@ -44,7 +44,7 @@ const ContactIcons = ({ variant = "navbar" }) => {
             <FaViber size={22} />
           </a>
         </div>
-        <span className="phone-number">+972-54-3421852</span>
+        <span className={`phone-number ${variant}`}>+972-54-3421852</span>
       </div>
     </div>
   );

@@ -80,8 +80,12 @@
 }
 
 .phone-number {
+  display: inline-flex;
   font-size: 16px;
   text-decoration: underline;
+}
+.phone-number.navbar {
+  display: none;
 }
 
 h5 {
