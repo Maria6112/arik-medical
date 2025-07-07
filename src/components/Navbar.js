@@ -35,9 +35,6 @@ const Navbar = () => {
           className={`burger ${menuOpen ? "open" : ""}`}
           onClick={toggleMenu}
         >
-          {/* <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div> */}
           <span className="bar top"></span>
           <span className="bar middle"></span>
           <span className="bar bottom"></span>

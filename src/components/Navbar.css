@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 /* === ЛОГО === */
@@ -16,12 +16,18 @@
   height: 60px;
   object-fit: contain;
 }
+.navbar-logo {
+  max-width: 60%;
+  overflow: hidden;
+}
 
 /* === ПРАВО: контакты и бургер === */
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
+  margin-left: auto; /* Сдвигает всё вправо */
+  flex-shrink: 0; /* Не позволяет сжиматься */
 }
 
 /* === БУРГЕР === */
@@ -109,5 +115,19 @@
 
   .navbar-center {
     display: none;
+  }
+}
+@media (max-width: 480px) {
+  .icon-btn {
+    padding: 4px;
+  }
+
+  .icon-btn svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .logo-img {
+    height: 48px;
   }
 }
