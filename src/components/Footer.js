@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Footer.css";
 import ContactIcons from "./ContactIcons";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { FaEnvelope } from "react-icons/fa";
+import NotifyMake from "./NotifyMake";
+
 const Footer = () => {
+  const handleClick = async () => {
+    await NotifyMake({
+      name: `Клик на footer`,
+      phone: "—",
+      message: `Пользователь кликнул на email`,
+    });
+  };
+
   return (
     <footer className="site-footer">
       <div className="footer-content">
@@ -11,20 +21,39 @@ const Footer = () => {
           <h4>Навигация</h4>
           <ul>
             <li>
-              <Link to="/">Главная</Link>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "active-link" : "")}
+              >
+                Главная
+              </NavLink>
             </li>
             <li>
-              <Link to="/about">О нас</Link>
+              <NavLink
+                to="/about"
+                className={({ isActive }) => (isActive ? "active-link" : "")}
+              >
+                О нас
+              </NavLink>
             </li>
             <li>
-              <Link to="/contact">Контакты</Link>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) => (isActive ? "active-link" : "")}
+              >
+                Контакты
+              </NavLink>
             </li>
           </ul>
         </div>
 
         <div className="footer-column">
           <h4>Контакты</h4>
-          <a href="mailto:ariktours@mail.ru" className="email-link">
+          <a
+            href="mailto:ariktours@mail.ru"
+            className="email-link"
+            onClick={() => handleClick()}
+          >
             <FaEnvelope className="email-icon" /> ariktours@mail.ru
           </a>
           <ContactIcons variant="footer" />

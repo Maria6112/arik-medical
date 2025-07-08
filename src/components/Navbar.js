@@ -1,5 +1,5 @@
-import React, { useContext, useState, useEffect, useRef } from "react";
-import { NavLink, useNavigate, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../assets/images/arik-medical-logo1.JPG";
 import ContactIcons from "../components/ContactIcons";
@@ -35,15 +35,27 @@ const Navbar = () => {
         )}
       </div>
       <div className={`navbar-center navbar-links ${menuOpen ? "active" : ""}`}>
-        <Link to="/" onClick={() => setMenuOpen(false)}>
+        <NavLink
+          to="/"
+          onClick={() => setMenuOpen(false)}
+          className={({ isActive }) => (isActive ? "active-link" : "")}
+        >
           Главная
-        </Link>
-        <Link to="/about" onClick={() => setMenuOpen(false)}>
+        </NavLink>
+        <NavLink
+          to="/about"
+          onClick={() => setMenuOpen(false)}
+          className={({ isActive }) => (isActive ? "active-link" : "")}
+        >
           О нас
-        </Link>
-        <Link to="/contact" onClick={() => setMenuOpen(false)}>
+        </NavLink>
+        <NavLink
+          to="/contact"
+          onClick={() => setMenuOpen(false)}
+          className={({ isActive }) => (isActive ? "active-link" : "")}
+        >
           Контакты
-        </Link>
+        </NavLink>
       </div>
       {/* Контакты справа */}
       <div className="navbar-right">
@@ -58,15 +70,27 @@ const Navbar = () => {
         </div>
       </div>
       <div className={`mobile-menu ${menuOpen ? "show" : ""}`}>
-        <Link to="/" onClick={() => setMenuOpen(false)}>
+        <NavLink
+          to="/"
+          onClick={() => setMenuOpen(false)}
+          className={({ isActive }) => (isActive ? "active-link" : "")}
+        >
           Главная
-        </Link>
-        <Link to="/about" onClick={() => setMenuOpen(false)}>
+        </NavLink>
+        <NavLink
+          to="/about"
+          onClick={() => setMenuOpen(false)}
+          className={({ isActive }) => (isActive ? "active-link" : "")}
+        >
           О нас
-        </Link>
-        <Link to="/contact" onClick={() => setMenuOpen(false)}>
+        </NavLink>
+        <NavLink
+          to="/contact"
+          onClick={() => setMenuOpen(false)}
+          className={({ isActive }) => (isActive ? "active-link" : "")}
+        >
           Контакты
-        </Link>
+        </NavLink>
       </div>
     </nav>
   );

@@ -11,6 +11,13 @@
   flex-wrap: nowrap;
 }
 
+a.active-link {
+  color: #009966;
+  text-decoration: underline;
+  font-weight: bold;
+  border-bottom: 2px solid #009966;
+}
+
 /* === ЛОГО === */
 .logo-img {
   height: 60px;
@@ -152,6 +159,15 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+.contact-toggle-btn:hover {
+  background-color: #0088cc;
+}
+.mobile-menu a.active-link {
+  color: #009966;
+  text-decoration: underline;
+  font-weight: bold;
+  border-bottom: 2px solid #009966;
 }
 
 /* Контейнер для иконок */

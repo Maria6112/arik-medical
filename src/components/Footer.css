@@ -70,3 +70,7 @@
 .email-icon {
   font-size: 16px;
 }
+.active-link {
+  color: #009966;
+  text-decoration: underline;
+}
