@@ -9,7 +9,7 @@ import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTopButton from "./components/ScrollToTopButton";
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
   useEffect(() => {
