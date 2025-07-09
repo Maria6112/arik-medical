@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import { Analytics } from "@vercel/analytics/next";
 
 const App = () => {
   useEffect(() => {
@@ -28,6 +29,7 @@ const App = () => {
       </Routes>
       <ScrollToTopButton />
       <Footer />
+      <Analytics />
     </Router>
   );
 };
