@@ -39,7 +39,7 @@ const Contact = () => {
         </div>
         <div>
           <a
-            href="mailto:ariktours@mail.ru"
+            href="mailto:info@arik-medical.com"
             target="_blank"
             rel="noopener noreferrer"
             className={"icon-btn email-icon navbar"}

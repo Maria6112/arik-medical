@@ -50,11 +50,11 @@ const Footer = () => {
         <div className="footer-column">
           <h4>Контакты</h4>
           <a
-            href="mailto:ariktours@mail.ru"
+            href="mailto:info@arik-medical.com"
             className="email-link"
             onClick={() => handleClick()}
           >
-            <FaEnvelope className="email-icon" /> ariktours@mail.ru
+            <FaEnvelope className="email-icon" /> info@arik-medical.com
           </a>
           <ContactIcons variant="footer" />
         </div>
