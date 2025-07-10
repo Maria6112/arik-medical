@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Home.css";
 import ConsultationForm from "../components/ConsultationForm";
 import { FaPlane, FaCar, FaUserMd, FaFileAlt } from "react-icons/fa";
 
 const Home = () => {
+  const formRef = useRef(null);
+
+  const scrollToForm = () => {
+    if (formRef.current) {
+      formRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="background-section">
       <div className="home-wrapper">
@@ -37,7 +45,12 @@ const Home = () => {
           </section>
         </div>
 
-        <div className="home-sidebar" data-aos="fade-left" data-aos-delay="400">
+        <div
+          className="home-sidebar"
+          data-aos="fade-left"
+          data-aos-delay="400"
+          ref={formRef}
+        >
           <div className="form-wrapper">
             <ConsultationForm />
           </div>
@@ -141,6 +154,13 @@ const Home = () => {
               или английский язык.
             </p>
           </div>
+        </div>
+      </section>
+      <section>
+        <div>
+          <button onClick={scrollToForm} className="consultation-button">
+            Получить консультацию
+          </button>
         </div>
       </section>
     </div>

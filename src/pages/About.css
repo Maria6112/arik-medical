@@ -63,3 +63,27 @@
     padding: 20px;
   }
 }
+.about-page h3 {
+  font-size: 22px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #333;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 5px;
+}
+
+.about-page ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+  list-style-type: disc;
+}
+
+.about-page li {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.about-page a {
+  color: #006699;
+  text-decoration: underline;
+}

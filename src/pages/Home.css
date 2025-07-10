@@ -194,6 +194,24 @@ ul {
   line-height: 1.5;
 }
 
+.consultation-button {
+  display: block;
+  margin: 40px auto;
+  padding: 15px 30px;
+  background-color: #009966;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.consultation-button:hover {
+  background-color: #007a55;
+}
+
 @media (max-width: 768px) {
   .background-section {
     flex-direction: column;

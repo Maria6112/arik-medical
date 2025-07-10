@@ -4,6 +4,7 @@ import ContactIcons from "./ContactIcons";
 import { NavLink, Link } from "react-router-dom";
 import { FaEnvelope } from "react-icons/fa";
 import NotifyMake from "./NotifyMake";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
 
 const Footer = () => {
   const handleClick = async () => {
@@ -62,6 +63,12 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <p>© {new Date().getFullYear()} Арик Медикал. Все права защищены.</p>
+      </div>
+
+      <div className="footer-bottom">
+        <NavLink to="/privacy-policy" className="footer-bottom-policy">
+          Политика конфиденциальности / Privacy Policy
+        </NavLink>
       </div>
     </footer>
   );
