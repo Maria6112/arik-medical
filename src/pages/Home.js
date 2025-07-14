@@ -157,7 +157,7 @@ const Home = () => {
         </div>
       </section>
       <section>
-        <div>
+        <div className="button-wrapper">
           <button onClick={scrollToForm} className="consultation-button">
             Получить консультацию
           </button>

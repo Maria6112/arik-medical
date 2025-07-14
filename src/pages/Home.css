@@ -194,22 +194,53 @@ ul {
   line-height: 1.5;
 }
 
+.button-wrapper {
+  display: flex;
+  justify-content: center; /* центр по горизонтали */
+  align-items: center; /* центр по вертикали (если надо) */
+}
+
 .consultation-button {
-  display: block;
-  margin: 40px auto;
-  padding: 15px 30px;
+  position: relative;
+  padding: 12px 24px;
   background-color: #009966;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
+  color: white;
+  font-size: 16px;
   border: none;
   border-radius: 8px;
+  overflow: hidden;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: box-shadow 0.3s ease;
+}
+
+.consultation-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  transform: skewX(-20deg);
+  animation: shine 2.5s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
 }
 
 .consultation-button:hover {
-  background-color: #007a55;
+  box-shadow: 0 0 15px rgba(0, 119, 255, 0.6);
 }
 
 @media (max-width: 768px) {
