@@ -1,13 +1,14 @@
 import React from "react";
 import collectUserMeta from "../utils/collectUserMeta";
 
-const NotifyMake = async ({ name, phone, message }) => {
+const NotifyMake = async ({ name, email, phone, message }) => {
   try {
     const meta = await collectUserMeta();
     const fullMessage = `
 📨 Новая активность в Арик Медикал:
 👤 Имя: ${name}
 📱 Телефон: ${phone}
+   Email: ${email}
 💬 Сообщение: ${message}
 
 🌍 IP: ${meta.ip}
@@ -15,6 +16,7 @@ const NotifyMake = async ({ name, phone, message }) => {
 🖥 Браузер: ${meta.userAgent}
 ⏰ Время: ${meta.dateTime}
     `;
+    console.log("Sending to Make:", fullMessage);
 
     await fetch("https://hook.eu2.make.com/whtv5yyjpf33zncp0t2ibhjmi5blrlyl", {
       method: "POST",

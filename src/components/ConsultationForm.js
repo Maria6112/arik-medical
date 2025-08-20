@@ -16,6 +16,7 @@ const ConsultationForm = () => {
 
     const formEl = form.current;
     const name = formEl.user_name.value;
+    const email = formEl.user_email.value;
     const message = formEl.message.value;
 
     if (phone.length < 10) {
@@ -47,6 +48,7 @@ const ConsultationForm = () => {
       await NotifyMake({
         name: name,
         phone: phone,
+        email: email,
         message: message,
       });
 
