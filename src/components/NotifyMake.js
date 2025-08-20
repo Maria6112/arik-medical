@@ -5,7 +5,7 @@ const NotifyMake = async ({ name, phone, message }) => {
   try {
     const meta = await collectUserMeta();
     const fullMessage = `
-📨 Новая активность:
+📨 Новая активность с Арик Медикал:
 👤 Имя: ${name}
 📱 Телефон: ${phone}
 💬 Сообщение: ${message}
