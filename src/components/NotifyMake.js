@@ -5,7 +5,7 @@ const NotifyMake = async ({ name, phone, message }) => {
   try {
     const meta = await collectUserMeta();
     const fullMessage = `
-📨 Новая активность:
+📨 Новая активность в Арик Медикал:
 👤 Имя: ${name}
 📱 Телефон: ${phone}
 💬 Сообщение: ${message}
@@ -20,9 +20,8 @@ const NotifyMake = async ({ name, phone, message }) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        name: name,
-        phone: phone,
-        message: fullMessage,
+        source: "arik-medical",
+        text: fullMessage,
       }),
     });
   } catch (error) {

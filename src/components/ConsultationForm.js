@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
 import "./ConsultationForm.css";
 import "react-phone-input-2/lib/style.css";
 import PhoneInput from "react-phone-input-2";
@@ -11,7 +11,7 @@ const ConsultationForm = () => {
   const [phone, setPhone] = useState("");
   const [statusMessage, setStatusMessage] = useState("");
 
-  const sendEmail = async (e) => {
+  const sendToBot = async (e) => {
     e.preventDefault();
 
     const formEl = form.current;
@@ -35,17 +35,14 @@ const ConsultationForm = () => {
       formEl.user_time.value = meta.dateTime;
       formEl.user_browser.value = meta.userAgent;
 
-      const result = await emailjs.sendForm(
-        "service_0bq0qff",
-        "template_5d9cmq4",
-        form.current,
-        "Scuu1QvAY13jEqBtb"
-      );
+      // const result = await emailjs.sendForm(
+      //   "service_0bq0qff",
+      //   "template_5d9cmq4",
+      //   form.current,
+      //   "Scuu1QvAY13jEqBtb"
+      // );
 
-      console.log(result.text);
-      setStatusMessage(
-        "Сообщение успешно отправлено! Скоро наш консультает с вами свяжется"
-      );
+      // console.log(result.text);
 
       await NotifyMake({
         name: name,
@@ -55,6 +52,9 @@ const ConsultationForm = () => {
 
       form.current.reset();
       setPhone("");
+      setStatusMessage(
+        "Сообщение успешно отправлено! Скоро наш консультает с вами свяжется"
+      );
     } catch (error) {
       console.error(error.text || error);
       setStatusMessage("Ошибка при отправке формы. Попробуйте еще раз.");
@@ -64,7 +64,7 @@ const ConsultationForm = () => {
   return (
     <div className="consultation-widget" id="consultation-form">
       <h3>Получить консультацию</h3>
-      <form ref={form} onSubmit={sendEmail}>
+      <form ref={form} onSubmit={sendToBot}>
         <input type="text" name="user_name" placeholder="Имя" required />
         <input type="email" name="user_email" placeholder="Email" required />
         <PhoneInput
