@@ -31,6 +31,7 @@ const ConsultationForm = () => {
     }
 
     try {
+      e.target.querySelector("button").disabled = true;
       setStatusMessage("Отправка...");
       // Получаем метаданные пользователя
       const meta = await collectUserMeta();
@@ -62,9 +63,11 @@ const ConsultationForm = () => {
       setStatusMessage(
         "Сообщение успешно отправлено! Скоро наш консультает с вами свяжется",
       );
+      e.target.querySelector("button").disabled = false;
     } catch (error) {
       console.error(error.text || error);
       setStatusMessage("Ошибка при отправке формы. Попробуйте еще раз.");
+      e.target.querySelector("button").disabled = false;
     }
   };
 
