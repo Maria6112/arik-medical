@@ -18,15 +18,20 @@ const ConsultationForm = () => {
     const name = formEl.user_name.value;
     const email = formEl.user_email.value;
     const message = formEl.message.value;
-
+    // ПРОВЕРКА НА ПУСТОТУ: если имя или сообщение пустые — прерываем выполнение
+    if (!name || !message) {
+      console.warn("Попытка отправить пустую форму блокирована.");
+      return;
+    }
     if (phone.length < 10) {
       setStatusMessage(
-        "Ошибка. Пожалуйста, введите корректный номер телефона."
+        "Ошибка. Пожалуйста, введите корректный номер телефона.",
       );
       return;
     }
 
     try {
+      setStatusMessage("Отправка...");
       // Получаем метаданные пользователя
       const meta = await collectUserMeta();
 
@@ -55,7 +60,7 @@ const ConsultationForm = () => {
       form.current.reset();
       setPhone("");
       setStatusMessage(
-        "Сообщение успешно отправлено! Скоро наш консультает с вами свяжется"
+        "Сообщение успешно отправлено! Скоро наш консультает с вами свяжется",
       );
     } catch (error) {
       console.error(error.text || error);
