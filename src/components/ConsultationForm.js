@@ -29,10 +29,11 @@ const ConsultationForm = () => {
       );
       return;
     }
+    setStatusMessage("Отправка...");
+    const btn = e.target.querySelector("button");
+    btn.disabled = true;
 
     try {
-      e.target.querySelector("button").disabled = true;
-      setStatusMessage("Отправка...");
       // Получаем метаданные пользователя
       const meta = await collectUserMeta();
 
@@ -41,13 +42,6 @@ const ConsultationForm = () => {
       formEl.user_city.value = `${meta.city}, ${meta.country}`;
       formEl.user_time.value = meta.dateTime;
       formEl.user_browser.value = meta.userAgent;
-
-      // const result = await emailjs.sendForm(
-      //   "service_0bq0qff",
-      //   "template_5d9cmq4",
-      //   form.current,
-      //   "Scuu1QvAY13jEqBtb"
-      // );
 
       // console.log(result.text);
 
@@ -63,11 +57,11 @@ const ConsultationForm = () => {
       setStatusMessage(
         "Сообщение успешно отправлено! Скоро наш консультает с вами свяжется",
       );
-      e.target.querySelector("button").disabled = false;
     } catch (error) {
       console.error(error.text || error);
       setStatusMessage("Ошибка при отправке формы. Попробуйте еще раз.");
-      e.target.querySelector("button").disabled = false;
+    } finally {
+      btn.disabled = false;
     }
   };
 
